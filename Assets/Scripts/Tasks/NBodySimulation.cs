@@ -24,41 +24,13 @@ public class NBodySimulation : MonoBehaviour {
     private bool isValidSimulation = false;
     private bool simulationStarted = false;
 
-    public bool demoMode = false;
-    public GameObject demoObject;
-    public GameObject trailsDemoObject;
-    public Vector3 demoGenerationRadii;
-    public Vector3 demoGenerationVelocityRange;
-    public float demoGenerationMinMass;
-    public float demoGenerationMaxMass;
-    public int demoNumberOfBodies;
-    public bool demoPerpendicularVelocities;
-    public float demoPerpendicularVelocitiesScaling;
+    public float maxVelocity = 10000;
+
+    public bool generateObjects = true;
 
 	// Use this for initialization
 	void Start () {
-        if (demoMode)
-        {
-            bodies = new GBody[demoNumberOfBodies];
-            for (int i = 0; i < bodies.Length; i++)
-            {
-                GameObject renderObject;
-                if (i == 0) renderObject = (GameObject)GameObject.Instantiate(trailsDemoObject);
-                else renderObject = (GameObject)GameObject.Instantiate(demoObject);
-                renderObject.transform.parent = this.transform;
-                Vector3 pos = Random.insideUnitSphere;
-                pos.Scale(demoGenerationRadii);
-                Vector3 vel = Random.insideUnitSphere;
-                vel.Scale(demoGenerationVelocityRange);
-                if (demoPerpendicularVelocities)
-                    vel = new Vector3(pos.z / demoPerpendicularVelocitiesScaling, 0, -pos.x / demoPerpendicularVelocitiesScaling);
-                float mass = Random.Range(demoGenerationMinMass, demoGenerationMaxMass);
-                
-                bodies[i] = new GBody(pos, vel, mass, renderObject, renderScale);
-            }
-        }
-
-        else
+        if (generateObjects)
         {
             //Validate that the nbody configuration is valid (just requirest initial condition arrays to be same length)
             if ((templateObjects.Length != initialPositions.Length) || (templateObjects.Length != initialVelocities.Length) || (templateObjects.Length != masses.Length))
@@ -77,9 +49,18 @@ public class NBodySimulation : MonoBehaviour {
             playerGBody = new GBody(playerPrefab.transform.position, Vector3.zero, shipMass, playerPrefab, -1);
             bodies[bodies.Length - 1] = playerGBody;
         }
-
-        isValidSimulation = true;
 	}
+
+    public void SetGBodyObjects(GBody[] b)
+    {
+        bodies = b;
+        isValidSimulation = true;
+    }
+
+    public GBody[] GetGBodyObjects()
+    {
+        return bodies;
+    }
 
     //Update given a dt (this is where the main computation for the simulation happens)
 	void FixedUpdate () {
@@ -97,6 +78,12 @@ public class NBodySimulation : MonoBehaviour {
                     netForce.y += forceArray[i][j].y;
                     netForce.z += forceArray[i][j].z;
                 }
+                this.bodies[i].Velocity = new Vector3(this.bodies[i].Velocity.x > maxVelocity ? maxVelocity : this.bodies[i].Velocity.x,
+                                                      this.bodies[i].Velocity.y > maxVelocity ? maxVelocity : this.bodies[i].Velocity.y,
+                                                      this.bodies[i].Velocity.z > maxVelocity ? maxVelocity : this.bodies[i].Velocity.z);
+                this.bodies[i].Velocity = new Vector3(this.bodies[i].Velocity.x < -maxVelocity ? -maxVelocity : this.bodies[i].Velocity.x,
+                                                      this.bodies[i].Velocity.y < -maxVelocity ? -maxVelocity : this.bodies[i].Velocity.y,
+                                                      this.bodies[i].Velocity.z < -maxVelocity ? -maxVelocity : this.bodies[i].Velocity.z);
                 var new_x_vals = numericalMethod(netForce.x / this.bodies[i].Mass, this.bodies[i].Position.x, this.bodies[i].Velocity.x, this.timestep);
                 var new_y_vals = numericalMethod(netForce.y / this.bodies[i].Mass, this.bodies[i].Position.y, this.bodies[i].Velocity.y, this.timestep);
                 var new_z_vals = numericalMethod(netForce.z / this.bodies[i].Mass, this.bodies[i].Position.z, this.bodies[i].Velocity.z, this.timestep);
@@ -147,7 +134,7 @@ public class NBodySimulation : MonoBehaviour {
 }
 
 //An object representing a single gravitational object
-class GBody{
+public class GBody{
     private Vector3 pos;
     private Vector3 vel;
     private float m;
@@ -196,5 +183,6 @@ class GBody{
 
     public float Mass{
         get{return this.m;}
+        set{this.m = value;}
     }
 }
