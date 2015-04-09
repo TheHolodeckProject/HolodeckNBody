@@ -138,6 +138,7 @@
   <ItemGroup>
     <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
     <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
+    <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
     <None Include="Assets\Plugins\x86\donotdelete.txt" />
     <None Include="Assets\Scripts\Shaders\BPCEM_box.shader" />
     <None Include="Assets\Scripts\Shaders\Mirror.shader" />
