@@ -49,7 +49,7 @@
      <Compile Include="Assets\AlignCameraObjectToSkeleton.cs" />
      <Compile Include="Assets\ArrowRenderer.cs" />
      <Compile Include="Assets\BillboardPlane.cs" />
-     <Compile Include="Assets\LookControllerScript.cs" />
+     <Compile Include="Assets\NBodyDemoController.cs" />
      <Compile Include="Assets\NBodyDemoMode.cs" />
      <Compile Include="Assets\NBodySimulationStateManager.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
@@ -68,6 +68,7 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
+     <Compile Include="Assets\OculusDemoLocationController.cs" />
      <Compile Include="Assets\PlacementBoundry.cs" />
      <Compile Include="Assets\Prefabs\Clock\Scripts\Clock.cs" />
      <Compile Include="Assets\PulseColor.cs" />
@@ -268,13 +269,13 @@
      <None Include="Assets\Space Graphics Toolkit\Shaders\Resources\SgtJovian.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Holodeck/Documents/GitHub/HolodeckNBody/HolodeckNBody/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Holodeck/Documents/GitHub/HolodeckNBody/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>C:/Users/Holodeck/Documents/GitHub/HolodeckNBody/HolodeckNBody/Assets/Plugins/x86_64/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>C:/Users/Holodeck/Documents/GitHub/HolodeckNBody/Assets/Plugins/x86_64/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

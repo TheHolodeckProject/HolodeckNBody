@@ -10,3 +10,15 @@ C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\HolodeckNBody\Temp\UnityVS_bin\
 C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\HolodeckNBody\obj\Debug\UnityVS.HolodeckNBody.CSharp.Plugins.csprojResolveAssemblyReference.cache
 C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\HolodeckNBody\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\HolodeckNBody\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Temp\UnityVS_bin\Debug\LeapCSharp.NET3.5.dll
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\obj\Debug\UnityVS.HolodeckNBody.CSharp.Plugins.csprojResolveAssemblyReference.cache
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\obj\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\obj\Debug\Assembly-CSharp-firstpass.pdb
