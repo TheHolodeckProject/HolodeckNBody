@@ -30,6 +30,7 @@ public class NBodyDemoMode : MonoBehaviour {
 
     [Header("Controller Properties")]
     public float lookRadius = 0.25f;
+    public KeyCode pauseKey = KeyCode.C;
     public KeyCode resetKey = KeyCode.Space;
     public Camera lookCamera;
 
@@ -174,6 +175,10 @@ public class NBodyDemoMode : MonoBehaviour {
         }
 
         //Process reset and quit keys
+        if (Input.GetKey(pauseKey))
+            sim.pauseSimulation = true;
+        else
+            sim.pauseSimulation = false;
         if (Input.GetKey(resetKey))
             Reset();
         if (Input.GetKey(KeyCode.F5))
