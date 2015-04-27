@@ -28,6 +28,8 @@ public class NBodySimulation : MonoBehaviour {
 
     public bool generateObjects = true;
 
+    private Vector3[][] forceArray;
+
 	// Use this for initialization
 	void Start () {
         if (generateObjects)
@@ -48,12 +50,26 @@ public class NBodySimulation : MonoBehaviour {
             }
             playerGBody = new GBody(playerPrefab.transform.position, Vector3.zero, shipMass, playerPrefab, -1);
             bodies[bodies.Length - 1] = playerGBody;
+            forceArray = new Vector3[this.bodies.Length][];
+            for (var i = 0; i < this.bodies.Length; i++)
+            {
+                forceArray[i] = new Vector3[this.bodies.Length];
+                for (int j = 0; j < forceArray[i].Length; j++)
+                    forceArray[i][j] = Vector3.zero;
+            }
         }
 	}
 
     public void SetGBodyObjects(GBody[] b)
     {
         bodies = b;
+        forceArray = new Vector3[this.bodies.Length][];
+        for (var i = 0; i < this.bodies.Length; i++)
+        {
+            forceArray[i] = new Vector3[this.bodies.Length];
+            for (int j = 0; j < forceArray[i].Length; j++)
+                forceArray[i][j] = Vector3.zero;
+        }
         isValidSimulation = true;
     }
 
@@ -66,10 +82,8 @@ public class NBodySimulation : MonoBehaviour {
 	void FixedUpdate () {
         if (isValidSimulation && !pauseSimulation)
         {
-            Vector3[][] forceArray = new Vector3[this.bodies.Length][]; //Array of computed forces
             for (var i = 0; i < this.bodies.Length; i++)
             { //Compute each force
-                forceArray[i] = new Vector3[this.bodies.Length];
                 var netForce = new Vector3(0, 0, 0); //Generate a net force for an object
                 for (var j = 0; j < this.bodies.Length; j++)
                 { //For each object

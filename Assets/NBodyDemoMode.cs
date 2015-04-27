@@ -5,6 +5,8 @@ using System;
 
 public class NBodyDemoMode : MonoBehaviour {
 
+    public bool loadPlayerPrefs = false;
+
     [Header("Prefab Objects")]
     public GameObject bodyObjectPrefab;
     public GameObject trailsObjectPrefab;
@@ -89,7 +91,8 @@ public class NBodyDemoMode : MonoBehaviour {
         sim = sims[0];
 
         //Load saved preferences
-        LoadPlayerPrefsValues();
+        if(loadPlayerPrefs)
+            LoadPlayerPrefsValues();
 
         //Generate Body Objects
         GBody[] bodies = new GBody[numberOfBodies];
@@ -212,7 +215,7 @@ public class NBodyDemoMode : MonoBehaviour {
                 bestScore = scoreT;
                 bestScoreText.text = "\r\nBest Score\r\n" + bestScore.ToString("F3") + "s";
             }
-            SaveDemoValuesToPlayerPrefs();
+            //SaveDemoValuesToPlayerPrefs();
         }
     }
 

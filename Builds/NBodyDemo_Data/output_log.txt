@@ -21,7 +21,7 @@ Platform assembly: C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Builds\NBody
 Loading C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Builds\NBodyDemo_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Builds\NBodyDemo_Data\Managed\LeapCSharp.NET3.5.dll (this message is harmless)
 Loading C:\Users\Holodeck\Documents\GitHub\HolodeckNBody\Builds\NBodyDemo_Data\Managed\LeapCSharp.NET3.5.dll into Unity Child Domain
-- Completed reload, in  0.032 seconds
+- Completed reload, in  0.178 seconds
 <RI> Initializing input.
 XInput1_3.dll not found.
 <RI> Input initialized.
